@@ -4,6 +4,7 @@ The Modern Day History of Jehovah's Witnesses
 This project is an effort to compile a visual timeline of the major events in
 the modern day history of Jehovah's Witnesses.
 
+See this project live at http://kmuncie.github.io/JW-MDT/
 
 Contributing
 ------------
