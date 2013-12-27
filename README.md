@@ -79,8 +79,3 @@ Other people's Lives
 --------------------
 
 Here's [a compilation of Lives from the people who has forked Life](https://github.com/cheeaun/life/wiki/Lives).
-
-License
--------
-
-[MIT](http://cheeaun.mit-license.org/)
