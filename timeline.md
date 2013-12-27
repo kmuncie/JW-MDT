@@ -1,4 +1,4 @@
-The Modern Day History of Jehovah's History
+The Modern Day History of Jehovah's Witnesses
 ===========================================
 
 - 1870 Charles Taze Russell begins his study of the Bible with a small group of associates
