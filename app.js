@@ -7,13 +7,20 @@
 
         utils: {
             extend: function(object) {
-                var args = Array.prototype.slice.call(arguments, 1);
-                for (var i=0, source; source=args[i]; i++) {
-                    if (!source) continue;
+                var args = Array.prototype.slice.call(arguments, 1),
+                    source;
+
+                while (args.length > 0) {
+                    source = args.shift();
+                    if (!source) {
+                        continue;
+                    }
+
                     for (var property in source) {
                         object[property] = source[property];
                     }
                 }
+
                 return object;
             }
         },
@@ -97,37 +104,73 @@
 
 
         parseTime: function(time, point) {
-            if (!point) point = 'start';
-            var data = {};
-            if (/^\~\d+$/.test(time)) { // ~YYYY
+            point = point || 'start';
+            var data, t;
+
+            data = {
+                title: time
+            };
+
+            // ~YYYY
+            if (/^\~\d+$/.test(time)) {
                 data = {
                     startYear: parseInt(time.slice(1), 10),
                     estimate: true
                 };
-            } else if (/^\d+$/.test(time)) { // YYYY
+
+                return data;
+            }
+
+            // YYYY
+            if (/^\d+$/.test(time)) {
                 data[point + 'Year'] = parseInt(time, 10);
-            } else if (/^\d+\/\d+$/.test(time)) { // MM/YYYY
-                var t = time.split('/');
+                return data;
+            }
+
+            // MM/YYYY
+            if (/^\d+\/\d+$/.test(time)) {
+                t = time.split('/');
                 data[point + 'Month'] = parseInt(t[0], 10);
                 data[point + 'Year'] = parseInt(t[1], 10);
-            } else if (/^\d+\/\d+\/\d+$/.test(time)) { // DD/MM/YYYY
-                var t = time.split('/');
+                return data;
+            }
+
+            // DD/MM/YYYY
+            if (/^\d+\/\d+\/\d+$/.test(time)) {
+                t = time.split('/');
                 data[point + 'Date'] = parseInt(t[0], 10);
                 data[point + 'Month'] = parseInt(t[1], 10);
                 data[point + 'Year'] = parseInt(t[2], 10);
-            } else if (/\d\-/.test(time)) { // TIME-TIME
-                var splitTime = time.split('-');
-                var startTime = life.parseTime(splitTime[0]);
-                var endTime = life.parseTime(splitTime[1], 'end');
-                for (var k in startTime) { data[k] = startTime[k] }
-                for (var k in endTime) { data[k] = endTime[k] }
-            } else if (time == '~') { // NOW
+                return data;
+            }
+
+            // TIME-TIME
+            if (/\d\-/.test(time)) {
+                var splitTime = time.split('-'),
+                    startTime = life.parseTime(splitTime[0]),
+                    endTime = life.parseTime(splitTime[1], 'end'),
+                    k;
+
+                for (k in startTime) {
+                    data[k] = startTime[k];
+                }
+
+                for (k in endTime) {
+                    data[k] = endTime[k];
+                }
+
+                return data;
+            }
+
+            // NOW
+            if (time == '~') {
                 var now = new Date();
                 data.endYear = now.getFullYear();
                 data.endMonth = now.getMonth()+1;
                 data.endDate = now.getDate();
+                return data;
             }
-            data.title = time;
+
             return data;
         },
 
@@ -176,7 +219,7 @@
             // Parse Markdown links in the text
             // credit: http://stackoverflow.com/a/9268827
             var link = null;
-            while(link = d.text.match(/\[([^\]]+)\]\(([^)"]+)(?: \"([^\"]+)\")?\)/)) {
+            while (!!(link = d.text.match(/\[([^\]]+)\]\(([^)"]+)(?: \"([^\"]+)\")?\)/))) {
                 var link_attr = "";
                 if (link[3] !== undefined) {
                     link_attr = " title='" + link[3] + "'";
@@ -184,11 +227,11 @@
                 d.text = d.text.replace(link[0], "<a href='" + link[2] + "'" + link_attr + ">" + link[1] + "</a>");
             }
 
-            return '<div class="event" style="margin-left: ' + offset.toFixed(2) + 'px">'
-                + '<div class="time" style="width: ' + width.toFixed(2) + 'px"></div>'
-                + '<b>' + d.time.title + '</b> ' + d.text + '&nbsp;&nbsp;'
-                + '</div>';
-            return '';
+            var html = '<div class="event" style="margin-left: ' + offset.toFixed(2) + 'px">';
+            html += '<div class="time" style="width: ' + width.toFixed(2) + 'px"></div>';
+            html += '<b>' + d.time.title + '</b> ' + d.text + '&nbsp;&nbsp;';
+            html += '</div>';
+            return html;
         },
 
 
@@ -197,11 +240,12 @@
             var html = '';
             var days = 0;
             var hideAge = life.config.hideAge;
-            for (var y=firstYear, age = 0; y<=lastYear+1; y++, age++) {
-                html += '<section class="year" style="left: ' + (days*dayLength).toFixed(2) + 'px">'
-                    + y + (hideAge ? '' : (' (' + age + ')'))
-                    + '</section>';
-                days += (y % 4 == 0) ? 366 : 365;
+
+            for (var y = firstYear, age = 0; y <= lastYear + 1; y++, age++) {
+                html += '<section class="year" style="left: ' + (days * dayLength).toFixed(2) + 'px">';
+                html += y + (hideAge ? '' : (' (' + age + ')'));
+                html += '</section>';
+                days += (y % 4 === 0) ? 366 : 365;
             }
             return html;
         },
