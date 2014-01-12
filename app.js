@@ -40,6 +40,23 @@
                     var data = life.parse(response);
                     var title = life.parseTitle(response);
                     life.render(title, data);
+
+                    var scroll = function(event) {
+                        var delta = event.wheelDelta / 10;
+                        life.config.yearLength += delta;
+                        life.config.yearLength = Math.max(life.config.yearLength, 1);
+                        life.render(title, data);
+                    }
+
+                    if (document.addEventListener) {
+                        // IE9, Chrome, Safari, Opera
+                        document.addEventListener("mousewheel", scroll, false);
+                        // Firefox
+                        document.addEventListener("DOMMouseScroll", scroll, false);
+                    } else {
+                        // IE 6/7/8
+                        document.attachEvent("onmousewheel", scroll);
+                    }
                 });
             });
         },
@@ -262,6 +279,10 @@
                 html += life.renderEvent(d);
             });
             life.$el.innerHTML = html;
+
+            var numYears = lastYear - firstYear,
+                width = numYears * life.config.yearLength;
+            life.$el.style.width = width + "px";
         }
     };
 
