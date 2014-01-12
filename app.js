@@ -29,14 +29,12 @@
         config: {
             yearLength: 120, // 120px per year
             hideAge: false, // Hide age from year axis
-            customStylesheetURL: null // Custom stylesheet
         },
 
 
         start: function() {
             life.loadConfig(function(config) {
                 life.config = life.utils.extend(life.config, config);
-                if (life.config.customStylesheetURL) life.injectStylesheet(life.config.customStylesheetURL);
 
                 life.fetch(function(response) {
                     var data = life.parse(response);
@@ -61,14 +59,6 @@
                 fn({});
             };
             xhr.send();
-        },
-
-
-        injectStylesheet: function(url) {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = url;
-            document.body.appendChild(link);
         },
 
 
