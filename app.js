@@ -93,7 +93,7 @@
             var list = response.match(/\-\s+[^\n\r]+/ig);
             var data = [];
             list.forEach(function(l) {
-                var matches = l.match(/\-\s+([\d\/\-\~]+)\s(.*)/i);
+                var matches = l.match(/\-\s+([\d\/\-\~\BCE]+)\s(.*)/i);
                 var time = matches[1];
                 var text = matches[2];
                 data.push({
@@ -128,6 +128,12 @@
                 return data;
             }
 
+            // YYYYBCE
+            if (/^\d+BCE$/.test(time)) {
+                data[point + 'Year'] = -(parseInt(time, 10));
+                return data;
+            }
+
             // YYYY
             if (/^\d+$/.test(time)) {
                 data[point + 'Year'] = parseInt(time, 10);
@@ -152,7 +158,7 @@
             }
 
             // TIME-TIME
-            if (/\d\-/.test(time)) {
+            if (/\-/.test(time)) {
                 var splitTime = time.split('-'),
                     startTime = life.parseTime(splitTime[0]),
                     endTime = life.parseTime(splitTime[1], 'end'),
