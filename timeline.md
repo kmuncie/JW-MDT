@@ -31,4 +31,4 @@ The Modern Day History of Jehovah's Witnesses
 - 27/09/2012-~ Redesigned jw.org website launched
 - 10/2014 The trial arrangement of JW Broadcasting is announced and the first monthly program is released.  
 - 08/2015 JW Broadcasting starts to be translated into over 70 languages.
-- 
+- 12/2015 The sale of Brooklyn properties begins.  85 Jay Street, 25/30 and 124 Columbia Heights are the properties to be sold.
