@@ -23,4 +23,12 @@ The Modern Day History of Jehovah's Witnesses
 - 1917 Joseph F. Rutherford is unanimously elected second president of the Society
 - 1918 The Society's officers and some principal associates are imprisoned; the witness work is killed
 - 1919 The Society's officers and associates are released from prison; the witness work is revived
+- 1943 Theocratic Ministry School is established.
+- 1943 Gilead School begins - the 1st class is held in February.
+- 1977 Pioneer Service School is inaugarated in the United States and eventually extends to all parts of the earth.
+- 1987 Ministerial Training School is opened.  
+- 07/2009 A plot of land is purchased in upstate New York, U.S.A., with plans to relocate the world headquarters.
 - 27/09/2012-~ Redesigned jw.org website launched
+- 10/2014 The trial arrangement of JW Broadcasting is announced and the first monthly program is released.  
+- 08/2015 JW Broadcasting starts to be translated into over 70 languages.
+- 
