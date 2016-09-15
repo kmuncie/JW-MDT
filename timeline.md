@@ -27,6 +27,7 @@ The Modern Day History of Jehovah's Witnesses
 - 1943 Gilead School begins - the 1st class is held in February.
 - 1977 Pioneer Service School is inaugurated in the United States and eventually extends to all parts of the earth.
 - 1987 Ministerial Training School is opened.  
+- 01/2009 Family Worship Evening is introduced.  The Congregation Book Study begins to be held on the same evening as the Theocratic Ministry School and Service Meeting.
 - 07/2009 A plot of land is purchased in Warwick, upstate New York, U.S.A., with plans to relocate the world headquarters.
 - 27/09/2012-~ Redesigned jw.org website launched
 - 07/2013 Construction begins at Warwick after receiving building permits.
