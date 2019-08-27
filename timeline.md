@@ -23,4 +23,17 @@ The Modern Day History of Jehovah's Witnesses
 - 1917 Joseph F. Rutherford is unanimously elected second president of the Society
 - 1918 The Society's officers and some principal associates are imprisoned; the witness work is killed
 - 1919 The Society's officers and associates are released from prison; the witness work is revived
+- 1943 Theocratic Ministry School is established.
+- 1943 Gilead School begins - the 1st class is held in February.
+- 1977 Pioneer Service School is inaugurated in the United States and eventually extends to all parts of the earth.
+- 1987 Ministerial Training School is opened.  
+- 01/2009 Family Worship Evening is introduced.  The Congregation Book Study begins to be held on the same evening as the Theocratic Ministry School and Service Meeting.
+- 07/2009 A plot of land is purchased in Warwick, upstate New York, U.S.A., with plans to relocate the world headquarters.
 - 27/09/2012-~ Redesigned jw.org website launched
+- 07/2013 Construction begins at Warwick after receiving building permits.
+- 10/2014 The trial arrangement of JW Broadcasting is announced and the first monthly program is released.  
+- 08/2015 JW Broadcasting starts to be translated into over 70 languages.
+- 12/2015 Peak construction phase of New World Headquarters is completed.
+- 12/2015 The sale of Brooklyn properties begins.  85 Jay Street, 25/30 and 124 Columbia Heights are the properties to be sold.
+- 04/2016 The sale of 124 Columbia Heights is completed.
+- 06/2016 The sale of The Towers, 21 Clark Street, is completed. 
